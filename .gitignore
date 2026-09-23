@@ -1,0 +1,7 @@
+# Local tooling
+.claude/
+__pycache__/
+*.pyc
+
+# Empty scratch file
+pt.py
