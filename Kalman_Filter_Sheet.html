@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Linear Kalman Filter — Robotics Concepts in One Page</title>
+<script>MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]}}</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @page { size: 210mm 297mm; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 210mm; height: 297mm; margin: auto;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #1a1a1a; background: #fff;
+    padding: 14mm 16mm 10mm;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .header {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 7.5pt; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #888;
+    border-bottom: 2px solid #c0392b; padding-bottom: 4px; margin-bottom: 10px;
+  }
+  h1 { font-size: 20pt; line-height: 1.1; margin-bottom: 1px; color: #111; }
+  .subtitle { font-size: 9pt; font-style: italic; color: #555; margin-bottom: 10px; }
+  h2 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 8.5pt; font-weight: 800; text-transform: uppercase;
+    color: #c0392b; letter-spacing: 0.06em;
+    border-bottom: 1px solid #ddd; padding-bottom: 2px;
+    margin-top: 8px; margin-bottom: 5px;
+  }
+  h2.magic {
+    font-size: 9pt; color: #fff; background: #c0392b;
+    padding: 4px 10px; border-radius: 3px; border-bottom: none;
+    margin-top: 8px; margin-bottom: 6px;
+  }
+  p { font-size: 8.5pt; line-height: 1.5; margin-bottom: 4px; }
+  ul { padding-left: 14px; margin-bottom: 4px; }
+  li { font-size: 8.5pt; line-height: 1.45; margin-bottom: 1px; }
+  blockquote {
+    border-left: 2px solid #c0392b; margin: 5px 0;
+    padding: 3px 10px; background: #fdf6f0; font-style: italic; font-size: 8pt;
+  }
+  blockquote strong { font-style: normal; }
+  .eq { text-align: center; margin: 6px 0; font-size: 10.5pt; }
+  .eq-big {
+    text-align: center; margin: 6px 0; font-size: 13pt;
+    background: #faf5ef; padding: 7px 14px; border-radius: 4px;
+    border: 1px solid #e8ddd0;
+  }
+  .eq-med { text-align: center; margin: 5px 0; font-size: 10.5pt; }
+  .cols { display: flex; gap: 16px; margin-top: 2px; }
+  .cols > div { flex: 1; }
+  table { width: 100%; border-collapse: collapse; font-size: 8pt; }
+  th {
+    text-align: left; font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 7.5pt; font-weight: 700; padding: 3px 6px;
+    border-bottom: 1.5px solid #333; color: #333;
+  }
+  td { padding: 3px 6px; border-bottom: 1px solid #eee; vertical-align: top; line-height: 1.4; }
+  td:first-child { width: 50px; font-weight: 500; }
+  hr { border: none; border-top: 2px solid #c0392b; margin: 8px 0; }
+  .decision ul { list-style: none; padding: 0; }
+  .decision li {
+    font-size: 8.5pt; line-height: 1.5; padding-left: 14px; position: relative; margin-bottom: 2px;
+  }
+  .decision li::before { content: "→"; position: absolute; left: 0; color: #c0392b; font-weight: 700; }
+  .footer {
+    margin-top: auto; padding-top: 6px; border-top: 1px solid #ccc;
+    display: flex; justify-content: space-between;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 7pt; color: #999;
+  }
+  @media print { body { padding: 12mm 14mm 8mm; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <span>Robotics-One-Page · No. 01</span>
+  <span>14 August 2026</span>
+</div>
+
+<h1>The Linear Kalman Filter</h1>
+<div class="subtitle">The intuition explained plainly, with the mathematics distilled onto a single printable sheet</div>
+
+<h2>The Problem</h2>
+<p>How does the self-driving car know <em>exactly</em> where it is? Physics models aren't perfect. Sensors have static and noise.</p>
+<p><strong>The Solution:</strong> The Kalman filter is an optimal estimator that loops endlessly, fusing our physics prediction with our noisy sensor readings to find the truth.</p>
+<blockquote><strong>NOTE:</strong> This is the foundation. It assumes <strong>LINEARITY</strong>.</blockquote>
+
+<div class="cols">
+<div>
+
+<h2>Step 1: The Prediction</h2>
+<div class="eq">
+$$\hat{x}_k = F\hat{x}_{k-1} + Bu_k$$
+$$P_k = FP_{k-1}F^T + Q$$
+</div>
+<table>
+  <thead><tr><th>Symbol</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td>$\hat{x}_{k-1}$</td><td>Previous state (where was I?)</td></tr>
+    <tr><td>$P_{k-1}$</td><td>Previous uncertainty</td></tr>
+    <tr><td>$\hat{x}_k$</td><td>Current state prediction</td></tr>
+    <tr><td>$P_k$</td><td>Current uncertainty</td></tr>
+    <tr><td>$F$</td><td>State Transition Matrix</td></tr>
+    <tr><td>$u_k$</td><td>Control input (gas, steering)</td></tr>
+    <tr><td>$B$</td><td>Control matrix</td></tr>
+    <tr><td>$Q$</td><td>Process noise (wind, bumps)</td></tr>
+  </tbody>
+</table>
+
+</div>
+<div>
+
+<h2>Step 2: The Measurement</h2>
+<div class="eq">
+$$z_k = H\hat{x}_k + v_k$$
+</div>
+<table>
+  <thead><tr><th>Symbol</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td>$z_k$</td><td>Sensor reading (GPS, LIDAR)</td></tr>
+    <tr><td>$H$</td><td>Observation Matrix</td></tr>
+    <tr><td>$v_k$</td><td>Sensor noise</td></tr>
+    <tr><td>$R$</td><td>Measurement Covariance</td></tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+
+<hr>
+
+<h2 class="magic">The Magic: The Kalman Gain</h2>
+
+<div class="eq-big">
+$$K = P_k H^T \left(H P_k H^T + R\right)^{-1}$$
+</div>
+
+<p><em>Don't let the matrix scare you. Conceptually, it asks:</em> <strong>Who do I trust more?</strong></p>
+
+<div class="eq-med">
+$$K \approx \frac{\text{Prediction uncertainty}}{\text{Prediction uncertainty} + \text{Sensor uncertainty}}$$
+</div>
+
+<div class="decision">
+  <p><strong style="color:#c0392b">The Decision Logic:</strong></p>
+  <ul>
+    <li>If <strong>R</strong> is large, then <strong>K → 0</strong>. Ignore the sensor and trust our physics prediction.</li>
+    <li>If <strong>P<sub>k</sub></strong> is large, then <strong>K → 1</strong>. Ignore physics and trust the sensor.</li>
+  </ul>
+</div>
+
+<hr>
+
+<h2>The Final Update</h2>
+<div class="eq">
+$$\hat{x}_k = \hat{x}_k^- + K\left(z_k - H\hat{x}_k^-\right)$$
+$$P_k = \left(I - KH\right)P_k^-$$
+</div>
+
+<div class="footer">
+  <span>Mahmud Lawal</span>
+  <span>Linear Kalman Filter — 01</span>
+</div>
+
+</body>
+</html>
