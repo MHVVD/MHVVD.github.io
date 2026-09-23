@@ -209,6 +209,30 @@
           </ul>
         </div>
 
+        <div class="cert-card cert-card--wide anim-reveal" style="animation-delay:0.26s">
+          <div class="cert-card__top">
+            <div class="cert-icon cert-icon--sdc" aria-hidden="true">SDC</div>
+            <span class="cert-card__issuer">University of Toronto / Coursera</span>
+          </div>
+          <h3 class="cert-card__name">Self-Driving Cars Specialization</h3>
+          <p class="cert-card__desc">4-course specialization covering the full autonomous-vehicle software stack — vehicle dynamics and control, state estimation and localization, visual perception, and motion planning — built through hands-on projects in the CARLA simulator.</p>
+
+          <!-- Featured credential preview — click to open lightbox -->
+          <div class="cert-featured">
+            <button class="cert-featured__btn" onclick="openCert('assets/img/certs/cert-sdc-specialization.jpg','Self-Driving Cars — Full Specialization','Aug 28, 2026 · 4 Courses','https://coursera.org/verify/specialization/WK0A3D2QTR04')" aria-label="View specialization certificate">
+              <img src="assets/img/certs/cert-sdc-specialization.jpg" alt="Self-Driving Cars Specialization certificate" loading="lazy">
+              <span class="cert-featured__badge">+4 courses</span>
+            </button>
+          </div>
+
+          <ul class="cert-card__skills">
+            <li>Vehicle dynamics &amp; control</li>
+            <li>State estimation &amp; localization (EKF, ES-EKF, sensor fusion)</li>
+            <li>Visual perception &amp; object detection</li>
+            <li>Behaviour &amp; motion planning in CARLA</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
@@ -334,12 +358,26 @@
       { src: 'assets/img/certs/cert-py-data-structures.jpg', title: 'Python Data Structures', date: 'Aug 30, 2022', url: 'https://coursera.org/verify/29E8FEWH4MZZ' },
       { src: 'assets/img/certs/cert-py-web-data.jpg', title: 'Using Python to Access Web Data', date: 'Sep 7, 2022', url: 'https://coursera.org/verify/25LX99VT9JGD' },
       { src: 'assets/img/certs/cert-py-databases.jpg', title: 'Using Databases with Python', date: 'Sep 19, 2022', url: 'https://coursera.org/verify/BM7WLXL25PMM' },
-      { src: 'assets/img/certs/cert-py-capstone.jpg', title: 'Capstone: Visualizing Data with Python', date: 'Sep 19, 2022', url: 'https://coursera.org/verify/9ZBLFCCT6Q3X' }
+      { src: 'assets/img/certs/cert-py-capstone.jpg', title: 'Capstone: Visualizing Data with Python', date: 'Sep 19, 2022', url: 'https://coursera.org/verify/9ZBLFCCT6Q3X' },
+      { src: 'assets/img/certs/cert-sdc-specialization.jpg', title: 'Self-Driving Cars — Full Specialization', date: 'Aug 28, 2026 · 4 Courses', url: 'https://coursera.org/verify/specialization/WK0A3D2QTR04' },
+      { src: 'assets/img/certs/cert-sdc-intro.jpg', title: 'Introduction to Self-Driving Cars', date: 'Jun 29, 2026', url: 'https://coursera.org/verify/UMIL90E3VF7V' },
+      { src: 'assets/img/certs/cert-sdc-state-estimation.jpg', title: 'State Estimation and Localization for Self-Driving Cars', date: 'Jul 18, 2026', url: 'https://coursera.org/verify/5CV6H7M8UDJC' },
+      { src: 'assets/img/certs/cert-sdc-visual-perception.jpg', title: 'Visual Perception for Self-Driving Cars', date: 'Jul 24, 2026', url: 'https://coursera.org/verify/UYGH7GSJ0QEI' },
+      { src: 'assets/img/certs/cert-sdc-motion-planning.jpg', title: 'Motion Planning for Self-Driving Cars', date: 'Aug 28, 2026', url: 'https://coursera.org/verify/6RNCUJTK9SRZ' }
     ];
     var _certIdx = 0;
+    var _certGroup = _certs;
+
+    /* Arrows cycle within the specialization the opened cert belongs to (grouped by filename prefix). */
+    function _groupOf(src) {
+      var prefix = src.replace(/^.*\/(cert-[a-z]+)-.*$/, '$1');
+      return _certs.filter(function(c){ return c.src.indexOf('/' + prefix + '-') !== -1; });
+    }
 
     function openCert(src, title, date, verifyUrl, idx) {
-      _certIdx = (idx !== undefined) ? idx : _certs.findIndex(function(c){ return c.src === src; });
+      _certGroup = _groupOf(src);
+      if (!_certGroup.length) _certGroup = _certs;
+      _certIdx = (idx !== undefined) ? idx : _certGroup.findIndex(function(c){ return c.src === src; });
       if (_certIdx < 0) _certIdx = 0;
       _renderCert();
       document.getElementById('cert-lightbox').classList.add('is-open');
@@ -347,16 +385,16 @@
     }
 
     function _renderCert() {
-      var c = _certs[_certIdx];
+      var c = _certGroup[_certIdx];
       document.getElementById('cert-lightbox-img').src = c.src;
       document.getElementById('cert-lightbox-title').textContent = c.title;
       document.getElementById('cert-lightbox-date').textContent = c.date;
       document.getElementById('cert-lightbox-verify').href = c.url;
-      document.getElementById('cert-lightbox-counter').textContent = (_certIdx + 1) + ' / ' + _certs.length;
+      document.getElementById('cert-lightbox-counter').textContent = (_certIdx + 1) + ' / ' + _certGroup.length;
     }
 
     function shiftCert(dir) {
-      _certIdx = (_certIdx + dir + _certs.length) % _certs.length;
+      _certIdx = (_certIdx + dir + _certGroup.length) % _certGroup.length;
       _renderCert();
     }
 

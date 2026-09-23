@@ -246,6 +246,7 @@
 .cert-icon--ibm  { background: hsl(213 96% 18%); color: hsl(213 96% 80%); }
 .cert-icon--ros  { background: hsl(0 72% 18%); color: hsl(0 72% 80%); }
 .cert-icon--py   { background: hsl(47 88% 18%); color: hsl(47 88% 80%); }
+.cert-icon--sdc  { background: hsl(160 70% 16%); color: hsl(160 70% 78%); }
 
 .cert-card__issuer {
   font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
