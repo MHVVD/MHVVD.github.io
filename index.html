@@ -214,50 +214,61 @@
       <div class="section-head">
         <span class="eyebrow">Selected work</span>
         <h2>Projects &amp; competitions</h2>
-        <p>End-to-end systems across vision, language, and autonomy — several battle-tested in hackathons and global competitions.</p>
+        <p>End-to-end systems across vision, language, and autonomy, several battle-tested in hackathons and global competitions.</p>
       </div>
-      <div class="projects-grid">
+
+      <!-- Tabs are revealed by main.js; without JS both lists show in full -->
+      <div class="work-tabs" role="tablist" aria-label="Filter work" hidden>
+        <button class="work-tab" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="true">Projects <span class="work-tab__count">3</span></button>
+        <button class="work-tab" role="tab" id="tab-competitions" aria-controls="panel-competitions" aria-selected="false" tabindex="-1">Competitions <span class="work-tab__count">4</span></button>
+      </div>
+
+      <div class="projects-grid" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
 
         <article class="project-card anim-reveal" style="animation-delay:0.05s">
-          <div class="project-card__head"><h3>Zindi Traffic Congestion Analytics</h3><span class="project-card__badge">Competition</span></div>
-          <p>End-to-end video analytics pipeline classifying urban traffic congestion — YOLOv8 for real-time tracking, LightGBM for classification, with temporal lag/delta features for traffic-momentum accuracy.</p>
-          <div class="project-card__stack"><span class="chip">YOLOv8</span><span class="chip">OpenCV</span><span class="chip">LightGBM</span><span class="chip">Time-Series</span></div>
-        </article>
-
-        <article class="project-card anim-reveal" style="animation-delay:0.10s">
-          <div class="project-card__head"><h3>Meta AI “SharpShop” Visual Commerce</h3><span class="project-card__badge">Project</span></div>
+          <div class="project-card__head"><h3>Meta AI “SharpShop” Visual Commerce</h3></div>
           <p>Visual-first product discovery engine using vision-language models (Llama Vision) to extract features from product images, with OpenCV normalization and a LangGraph + FastAPI backend.</p>
           <div class="project-card__stack"><span class="chip">Llama Vision</span><span class="chip">LangGraph</span><span class="chip">FastAPI</span><span class="chip">OpenCV</span></div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.15s">
-          <div class="project-card__head"><h3>Graduate Career Agent</h3><span class="project-card__badge">Project</span></div>
-          <p>AI career coach built on FastAPI + Meta Llama 3: context-aware chat, a CV-tailoring engine that parses PDFs for gap analysis, ATS score estimation, and skill categorization — containerized with Docker.</p>
+        <article class="project-card anim-reveal" style="animation-delay:0.10s">
+          <div class="project-card__head"><h3>Graduate Career Agent</h3></div>
+          <p>AI career coach built on FastAPI + Meta Llama 3: context-aware chat, a CV-tailoring engine that parses PDFs for gap analysis, ATS score estimation, and skill categorization, all containerized with Docker.</p>
           <div class="project-card__stack"><span class="chip">Llama 3</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Hugging Face</span></div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.20s">
+        <article class="project-card anim-reveal" style="animation-delay:0.15s">
           <div class="project-card__head"><h3>AI-Based Smart Surveillance</h3><span class="project-card__badge">Final Year Project</span></div>
           <p>Event-driven surveillance with a PIR + Raspberry Pi camera wake-trigger, YOLO object detection via the OpenCV DNN module, low-latency edge inference, and real-time email threat alerts.</p>
           <div class="project-card__stack"><span class="chip">YOLO</span><span class="chip">OpenCV DNN</span><span class="chip">Raspberry Pi</span><span class="chip">Edge AI</span></div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.25s">
-          <div class="project-card__head"><h3>Zindi Crop Disease Detection</h3><span class="project-card__badge">Competition</span></div>
-          <p>YOLO-based computer-vision system for crop-disease identification: multi-stage segmentation and classification with a robust preprocessing pipeline, optimized for offline edge detection on the farm.</p>
-          <div class="project-card__stack"><span class="chip">YOLO</span><span class="chip">OpenCV</span><span class="chip">Edge Deployment</span></div>
+      </div>
+
+      <div class="projects-grid" id="panel-competitions" role="tabpanel" aria-labelledby="tab-competitions">
+
+        <article class="project-card anim-reveal" style="animation-delay:0.05s">
+          <div class="project-card__head"><h3>Wema Hackaholics 6.0</h3><span class="project-card__badge">🏆 Winner</span></div>
+          <p>Solved the “borderless office” problem with a dual-chatbot system for secure employee access: a WhatsApp-integrated assistant plus an identity-verification chatbot. Awarded overall winners.</p>
+          <div class="project-card__stack"><span class="chip">AI Chatbots</span><span class="chip">WhatsApp</span><span class="chip">Auth</span></div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.30s">
-          <div class="project-card__head"><h3>Shell Autonomous Programming</h3><span class="project-card__badge">Competition</span></div>
-          <p>Spearheaded the control algorithm for autonomous navigation and obstacle avoidance. First team from Sub-Saharan Africa to compete — secured a global leaderboard placement.</p>
+        <article class="project-card anim-reveal" style="animation-delay:0.10s">
+          <div class="project-card__head"><h3>Shell Autonomous Programming</h3></div>
+          <p>Spearheaded the control algorithm for autonomous navigation and obstacle avoidance. First team from Sub-Saharan Africa to compete, and secured a global leaderboard placement.</p>
           <div class="project-card__stack"><span class="chip">ROS</span><span class="chip">Robotics</span><span class="chip">Control</span></div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.35s">
-          <div class="project-card__head"><h3>Wema Hackaholics 6.0</h3><span class="project-card__badge">🏆 Winner</span></div>
-          <p>Solved the “borderless office” problem with a dual-chatbot system for secure employee access — a WhatsApp-integrated assistant plus an identity-verification chatbot. Awarded overall winners.</p>
-          <div class="project-card__stack"><span class="chip">AI Chatbots</span><span class="chip">WhatsApp</span><span class="chip">Auth</span></div>
+        <article class="project-card anim-reveal" style="animation-delay:0.15s">
+          <div class="project-card__head"><h3>Zindi Traffic Congestion Analytics</h3></div>
+          <p>End-to-end video analytics pipeline classifying urban traffic congestion: YOLOv8 for real-time tracking, LightGBM for classification, with temporal lag/delta features for traffic-momentum accuracy.</p>
+          <div class="project-card__stack"><span class="chip">YOLOv8</span><span class="chip">OpenCV</span><span class="chip">LightGBM</span><span class="chip">Time-Series</span></div>
+        </article>
+
+        <article class="project-card anim-reveal" style="animation-delay:0.20s">
+          <div class="project-card__head"><h3>Zindi Crop Disease Detection</h3></div>
+          <p>YOLO-based computer-vision system for crop-disease identification: multi-stage segmentation and classification with a robust preprocessing pipeline, optimized for offline edge detection on the farm.</p>
+          <div class="project-card__stack"><span class="chip">YOLO</span><span class="chip">OpenCV</span><span class="chip">Edge Deployment</span></div>
         </article>
 
       </div>

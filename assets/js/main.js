@@ -60,4 +60,35 @@
       if (v) el.textContent = v;
     });
   }
+
+  /* ---- Work tabs: Projects (default) / Competitions ---- */
+  var tabList = document.querySelector(".work-tabs");
+  if (tabList) {
+    var tabs = Array.prototype.slice.call(tabList.querySelectorAll('[role="tab"]'));
+    var select = function (tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+      });
+    };
+    var switchTo = function (tab) {
+      tabs.forEach(function (t) {
+        document.getElementById(t.getAttribute("aria-controls")).classList.add("is-switched");
+      });
+      select(tab);
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { switchTo(t); });
+      t.addEventListener("keydown", function (e) {
+        var step = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (!step) return;
+        var next = tabs[(i + step + tabs.length) % tabs.length];
+        switchTo(next); next.focus();
+      });
+    });
+    tabList.hidden = false;
+    select(tabs[0]);
+  }
 })();
