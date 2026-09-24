@@ -1,0 +1,54 @@
+---
+import type { CertDoc } from '../data/profile';
+
+interface Props {
+  id: string;
+  name: string;
+  courses: string;
+  docs: (CertDoc & { label: string })[];
+}
+const { id, name, courses, docs } = Astro.props;
+const ext = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+---
+
+<table class="cert-table">
+  <caption class="visually-hidden">{name} certificates</caption>
+  <thead class="visually-hidden">
+    <tr><th scope="col">Certificate</th><th scope="col">Date</th><th scope="col">Links</th></tr>
+  </thead>
+  <tbody>
+    {docs.map((d, i) => (
+      <tr class={i === 0 ? 'is-spec' : undefined}>
+        <th scope="row">{i === 0 ? `Specialization · ${courses}` : d.title}</th>
+        <td class="mono">{d.date}</td>
+        <td class="cert-table__actions">
+          <button type="button" class="cert-open linkish" data-group={id} data-index={i} aria-label={`View certificate: ${d.title}`}>View</button>
+          <a href={d.url} rel="noopener" aria-label={`Verify ${d.title} on Coursera`}>Verify <Fragment set:html={ext} /></a>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+<style>
+  .cert-table { width: 100%; border-collapse: collapse; font-size: 0.9063rem; }
+  .cert-table tr { border-top: 1px solid var(--line); }
+  .cert-table th, .cert-table td { padding: 9px 0; text-align: left; vertical-align: baseline; }
+  .cert-table th { font-weight: 400; padding-right: 16px; }
+  .cert-table tr.is-spec th { font-weight: 600; }
+  .cert-table td.mono { font-size: 0.8125rem; color: var(--text-3); white-space: nowrap; padding-right: 16px; }
+  .cert-table__actions { white-space: nowrap; text-align: right !important; }
+  .cert-table__actions a, .linkish {
+    font: inherit; font-size: 0.8438rem; color: var(--text-2); background: none; border: 0; padding: 0; cursor: pointer;
+    text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px;
+  }
+  .cert-table__actions a { display: inline-flex; align-items: center; gap: 2px; margin-left: 14px; }
+  .cert-table__actions a:hover, .linkish:hover { color: var(--accent); text-decoration-color: var(--accent); }
+  .cert-table__actions :global(svg) { width: 13px; height: 13px; flex: none; }
+  /* Narrow containers (compact cards, phones): stack title over date/links */
+  @container cred (max-width: 460px) {
+    .cert-table tr { display: grid; grid-template-columns: 1fr auto; }
+    .cert-table th { grid-column: 1 / -1; padding-bottom: 2px; }
+    .cert-table td { padding-top: 0; }
+  }
+</style>
