@@ -1,0 +1,168 @@
+---
+import 'katex/dist/katex.min.css';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { SITE, fmtDate, fmtDateTime, pad2, seriesLabel } from '../../data/site';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('posts', ({ data }) => !data.draft)).sort(
+    (a, b) => a.data.created.valueOf() - b.data.created.valueOf(),
+  );
+  return posts.map((post) => {
+    const inSeries = posts.filter((p) => post.data.series && p.data.series === post.data.series);
+    const i = inSeries.findIndex((p) => p.id === post.id);
+    return {
+      params: { slug: post.id },
+      props: { post, prev: inSeries[i - 1], next: inSeries[i + 1] },
+    };
+  });
+}
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+  prev?: CollectionEntry<'posts'>;
+  next?: CollectionEntry<'posts'>;
+}
+
+const { post, prev, next } = Astro.props;
+const { Content } = await render(post);
+const d = post.data;
+const showUpdated = d.updated && d.updated.valueOf() !== d.created.valueOf();
+const fileName = (p: string) => p.split('/').pop() ?? 'sheet.jpg';
+const seriesTag = d.series ? `${seriesLabel(d.series)}${d.seriesNumber ? ` · No. ${pad2(d.seriesNumber)}` : ''}` : '';
+---
+
+<Base
+  title={d.title}
+  description={d.excerpt}
+  type="article"
+  publishedTime={d.created}
+  image={d.sheetImages[0] ?? SITE.ogImage}
+>
+  <article class="container post">
+    <a class="post__back" href="/blog/">&larr; All writing</a>
+
+    <header class="post__head">
+      <p class="label post__meta">
+        {seriesTag && <span>{seriesTag}</span>}
+        <time datetime={d.created.toISOString()}>{fmtDate(d.created, 'long')}</time>
+        {d.readingTime && <span>{d.readingTime} read</span>}
+      </p>
+      <h1>{d.title}</h1>
+      {d.standfirst && <p class="post__standfirst">{d.standfirst}</p>}
+      <p class="post__times mono">
+        <span>Published {fmtDateTime(d.created)}</span>
+        {showUpdated && <span>Updated {fmtDateTime(d.updated!)}</span>}
+      </p>
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    {d.sheetImages.length > 0 && (
+      <section class="sheets" aria-label="Technical sheet">
+        <div class="sheets__rule"><span class="label">Technical sheet</span></div>
+        {d.sheetImages.map((src, i) => (
+          <figure class="sheet">
+            <figcaption class="sheet__bar">
+              <span class="label">
+                {seriesTag}
+                {d.sheetImages.length > 1 && ` · Page ${i + 1} of ${d.sheetImages.length}`}
+              </span>
+              <span class="sheet__actions">
+                {d.sheetHtml && i === 0 && <a class="btn" href={d.sheetHtml}>Printable HTML</a>}
+                <a class="btn" href={encodeURI(src)} download={fileName(src)}>
+                  Download sheet{d.sheetImages.length > 1 ? ` (page ${i + 1})` : ''}
+                </a>
+              </span>
+            </figcaption>
+            <a class="sheet__frame" href={encodeURI(src)} aria-label={`Open full-size sheet: ${d.title}`}>
+              <img
+                src={encodeURI(src)}
+                alt={`${d.title} — one-page technical sheet${d.sheetImages.length > 1 ? `, page ${i + 1}` : ''}`}
+                loading="lazy"
+              />
+            </a>
+          </figure>
+        ))}
+      </section>
+    )}
+
+    <nav class="post__nav" aria-label="Series navigation">
+      {prev ? (
+        <a href={`/blog/${prev.id}/`} class="post__nav-link">
+          <span class="label">&larr; Previous{prev.data.seriesNumber ? ` · No. ${pad2(prev.data.seriesNumber)}` : ''}</span>
+          <span>{prev.data.title}</span>
+        </a>
+      ) : <span />}
+      {next ? (
+        <a href={`/blog/${next.id}/`} class="post__nav-link post__nav-link--next">
+          <span class="label">Next{next.data.seriesNumber ? ` · No. ${pad2(next.data.seriesNumber)}` : ''} &rarr;</span>
+          <span>{next.data.title}</span>
+        </a>
+      ) : <span />}
+    </nav>
+
+    <div class="post__foot">
+      <a class="btn" href="/blog/">&larr; All writing</a>
+      <a class="btn btn--primary" href={SITE.links.email}>Get in touch</a>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .post { max-width: calc(var(--w-prose) + 2 * var(--gutter)); padding-block: clamp(28px, 5vw, 56px) 32px; }
+  .post__back { display: inline-block; font-size: 0.9375rem; color: var(--text-2); text-decoration: none; margin-bottom: 28px; }
+  .post__meta { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; }
+  .post__meta > :first-child { color: var(--accent); }
+  .post__head h1 { font-size: clamp(2rem, 1.4rem + 2.6vw, 2.875rem); letter-spacing: -0.025em; margin: 14px 0 16px; }
+  .post__standfirst { font-size: 1.1875rem; color: var(--text-2); line-height: 1.55; }
+  .post__times { display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 0.75rem; color: var(--text-3); padding-bottom: 24px; border-bottom: 1px solid var(--line); margin: 0 0 32px; }
+
+  .prose { font-size: 1.0938rem; line-height: 1.75; }
+  .prose :global(h2) { font-size: 1.375rem; margin: 2.2em 0 0.6em; }
+  .prose :global(h3) { font-size: 1.125rem; margin: 1.8em 0 0.5em; }
+  .prose :global(p) { margin: 0 0 1.15em; }
+  .prose :global(blockquote) {
+    margin: 1.5em 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--accent); color: var(--text-2);
+  }
+  .prose :global(blockquote p:last-child) { margin-bottom: 0; }
+  .prose :global(strong) { font-weight: 600; }
+  .prose :global(a) { color: var(--accent); }
+  .prose :global(code) { font-size: 0.875em; background: var(--bg-2); padding: 0.1em 0.35em; border-radius: 3px; }
+  .prose :global(.katex) { font-size: 1.08em; }
+  .prose :global(.katex-display) {
+    margin: 1.2em 0; padding: 14px 16px; overflow-x: auto; overflow-y: hidden;
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .prose :global(.katex-display > .katex) { font-size: 1.15em; }
+  /* Consecutive equations share one panel */
+  .prose :global(.katex-display:has(+ .katex-display)) {
+    margin-bottom: 0; padding-bottom: 6px; border-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+  }
+  .prose :global(.katex-display + .katex-display) {
+    margin-top: 0; padding-top: 6px; border-top: 0; border-top-left-radius: 0; border-top-right-radius: 0;
+  }
+
+  .sheets { margin-top: 48px; }
+  .sheets__rule { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+  .sheets__rule::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+  .sheets__rule .label { color: var(--accent); }
+  .sheet { margin: 0 0 28px; }
+  .sheet__bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .sheet__actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sheet__actions .btn { font-size: 0.875rem; padding: 7px 12px; }
+  .sheet__frame { display: block; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; box-shadow: var(--shadow); }
+  .sheet__frame img { width: 100%; }
+
+  .post__nav { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .post__nav-link { display: grid; gap: 4px; text-decoration: none; }
+  .post__nav-link span:last-child { font-weight: 500; }
+  .post__nav-link--next { text-align: right; }
+  .post__foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 32px; }
+  @media (max-width: 520px) {
+    .post__nav { grid-template-columns: 1fr; }
+    .post__nav-link--next { text-align: left; }
+  }
+</style>
