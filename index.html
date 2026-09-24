@@ -182,12 +182,16 @@
         </div>
 
         <div class="cert-card anim-reveal" style="animation-delay:0.19s">
-          <!-- Placeholder until the certificate image is added -->
-          <div class="cert-card__thumb cert-card__thumb--empty" aria-hidden="true">
-            <span>Certificate image coming soon</span>
-          </div>
+          <button class="cert-card__thumb" onclick="openCert('assets/img/certs/cert-ibm-capstone.jpg','AI Capstone Project with Deep Learning','May 13, 2024','https://coursera.org/verify/KQSHN3FUYYN7')" aria-label="View IBM AI Engineering course certificates">
+            <img src="assets/img/certs/cert-ibm-capstone.jpg" alt="IBM AI Capstone Project with Deep Learning certificate" loading="lazy">
+          </button>
           <h3 class="cert-card__name">IBM AI Engineering Professional Certificate</h3>
+          <div class="cert-card__links">
+            <button class="cert-card__link" onclick="openCert('assets/img/certs/cert-ibm-capstone.jpg','AI Capstone Project with Deep Learning','May 13, 2024','https://coursera.org/verify/KQSHN3FUYYN7')">View certificates</button>
+            <a class="cert-card__link" href="https://coursera.org/verify/KQSHN3FUYYN7" target="_blank" rel="noopener">Verify</a>
+          </div>
           <p class="cert-card__meta">IBM</p>
+          <p class="cert-card__meta">5 courses, Nov 2023 to May 2024</p>
         </div>
 
       </div>
@@ -320,7 +324,12 @@
       { src: 'assets/img/certs/cert-sdc-intro.jpg', title: 'Introduction to Self-Driving Cars', date: 'Jun 29, 2026', url: 'https://coursera.org/verify/UMIL90E3VF7V' },
       { src: 'assets/img/certs/cert-sdc-state-estimation.jpg', title: 'State Estimation and Localization for Self-Driving Cars', date: 'Jul 18, 2026', url: 'https://coursera.org/verify/5CV6H7M8UDJC' },
       { src: 'assets/img/certs/cert-sdc-visual-perception.jpg', title: 'Visual Perception for Self-Driving Cars', date: 'Jul 24, 2026', url: 'https://coursera.org/verify/UYGH7GSJ0QEI' },
-      { src: 'assets/img/certs/cert-sdc-motion-planning.jpg', title: 'Motion Planning for Self-Driving Cars', date: 'Aug 28, 2026', url: 'https://coursera.org/verify/6RNCUJTK9SRZ' }
+      { src: 'assets/img/certs/cert-sdc-motion-planning.jpg', title: 'Motion Planning for Self-Driving Cars', date: 'Aug 28, 2026', url: 'https://coursera.org/verify/6RNCUJTK9SRZ' },
+      { src: 'assets/img/certs/cert-ibm-capstone.jpg', title: 'AI Capstone Project with Deep Learning', date: 'May 13, 2024', url: 'https://coursera.org/verify/KQSHN3FUYYN7' },
+      { src: 'assets/img/certs/cert-ibm-machine-learning.jpg', title: 'Machine Learning with Python (with honors)', date: 'Nov 14, 2023', url: 'https://coursera.org/verify/G4RTZ3CWTAG3' },
+      { src: 'assets/img/certs/cert-ibm-deep-learning-keras.jpg', title: 'Introduction to Deep Learning & Neural Networks with Keras', date: 'Nov 12, 2023', url: 'https://coursera.org/verify/AZVQFWUKMVGB' },
+      { src: 'assets/img/certs/cert-ibm-keras-tensorflow.jpg', title: 'Deep Learning with Keras and Tensorflow', date: 'Dec 18, 2023', url: 'https://coursera.org/verify/8RKBGZLVLXDM' },
+      { src: 'assets/img/certs/cert-ibm-pytorch.jpg', title: 'Introduction to Neural Networks and PyTorch', date: 'Dec 8, 2023', url: 'https://coursera.org/verify/5VK5XQ5M8G93' }
     ];
     var _certIdx = 0;
     var _certGroup = _certs;
