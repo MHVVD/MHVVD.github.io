@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Page not found" description="This page doesn't exist." noindex>
+  <section class="container nf">
+    <p class="label">Error 404</p>
+    <h1>Page not found.</h1>
+    <p>The page you were looking for doesn't exist or has moved.</p>
+    <div class="nf__links">
+      <a class="btn btn--primary" href="/">Home</a>
+      <a class="btn" href="/blog/">Writing</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf { padding-block: clamp(64px, 12vw, 140px); max-width: 720px; margin-inline: 0 auto; }
+  .nf h1 { font-size: clamp(2rem, 1.4rem + 2.6vw, 3rem); letter-spacing: -0.025em; margin: 10px 0 12px; }
+  .nf p:not(.label) { color: var(--text-2); }
+  .nf__links { display: flex; gap: 10px; margin-top: 24px; }
+</style>
