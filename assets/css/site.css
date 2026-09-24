@@ -163,6 +163,32 @@
 }
 
 /* ---- Projects ---------------------------------------------- */
+.work-tabs {
+  display: flex; gap: 28px; margin: -10px 0 28px;
+  border-bottom: 1px solid var(--border);
+}
+.work-tabs[hidden] { display: none; }
+.work-tab {
+  font-family: var(--font-sans); font-size: 1rem; font-weight: 600;
+  color: var(--text-soft); background: none; border: 0; cursor: pointer;
+  padding: 0 2px 12px; margin-bottom: -1px;
+  border-bottom: 3px solid transparent;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: color 0.2s ease;
+}
+.work-tab:hover { color: var(--text-heading); }
+.work-tab[aria-selected="true"] { color: var(--text-heading); border-bottom-color: var(--accent); }
+.work-tab__count {
+  font-size: 0.75rem; font-weight: 700; line-height: 1;
+  padding: 0.3em 0.55em; border-radius: 999px;
+  background: var(--surface); color: var(--text-soft); border: 1px solid var(--border);
+}
+.work-tab[aria-selected="true"] .work-tab__count { color: var(--accent); border-color: var(--accent); }
+/* Without JS both panels show, so space them apart */
+#panel-projects + #panel-competitions { margin-top: 24px; }
+.projects-grid[hidden] { display: none; }
+/* After a tab switch, show cards at once instead of replaying the load-in fade */
+.projects-grid.is-switched .anim-reveal { animation: none; opacity: 1; }
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
 .project-card {
   display: flex; flex-direction: column; gap: 12px;
