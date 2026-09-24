@@ -169,6 +169,31 @@
         </div>
 
         <div class="cert-card anim-reveal" style="animation-delay:0.12s">
+          <button class="cert-card__thumb" onclick="openCert('assets/img/certs/cert-shell-apc-2025.jpg','Shell Eco-marathon Autonomous Programming Competition 2025','Certificate of Participation · May 28, 2025','')" aria-label="View Shell Eco-marathon Autonomous Programming Competition certificate">
+            <img src="assets/img/certs/cert-shell-apc-2025.jpg" alt="Shell Eco-marathon Autonomous Programming Competition 2025 certificate of participation" loading="lazy">
+          </button>
+          <h3 class="cert-card__name">Shell Eco-marathon Autonomous Programming Competition 2025</h3>
+          <div class="cert-card__links">
+            <button class="cert-card__link" onclick="openCert('assets/img/certs/cert-shell-apc-2025.jpg','Shell Eco-marathon Autonomous Programming Competition 2025','Certificate of Participation · May 28, 2025','')">View certificate</button>
+          </div>
+          <p class="cert-card__meta">Shell Eco-marathon · Team ABU Zaria</p>
+          <p class="cert-card__meta">Participated May 2025</p>
+        </div>
+
+        <div class="cert-card anim-reveal" style="animation-delay:0.19s">
+          <button class="cert-card__thumb" onclick="openCert('assets/img/certs/cert-ibm-professional.jpg','IBM AI Engineering: Professional Certificate','May 13, 2024 · 6 Courses','https://coursera.org/verify/professional-cert/KJLP9TM7WURC')" aria-label="View IBM AI Engineering Professional Certificate">
+            <img src="assets/img/certs/cert-ibm-professional.jpg" alt="IBM AI Engineering Professional Certificate" loading="lazy">
+          </button>
+          <h3 class="cert-card__name">IBM AI Engineering Professional Certificate</h3>
+          <div class="cert-card__links">
+            <button class="cert-card__link" onclick="openCert('assets/img/certs/cert-ibm-professional.jpg','IBM AI Engineering: Professional Certificate','May 13, 2024 · 6 Courses','https://coursera.org/verify/professional-cert/KJLP9TM7WURC')">View certificate</button>
+            <a class="cert-card__link" href="https://coursera.org/verify/professional-cert/KJLP9TM7WURC" target="_blank" rel="noopener">Verify</a>
+          </div>
+          <p class="cert-card__meta">IBM</p>
+          <p class="cert-card__meta">Completed May 2024</p>
+        </div>
+
+        <div class="cert-card anim-reveal" style="animation-delay:0.26s">
           <button class="cert-card__thumb" onclick="openCert('assets/img/certs/cert-py-specialization.jpg','Python for Everybody: Full Specialization','Sep 19, 2022 · 5 Courses','https://coursera.org/verify/specialization/UP9QNQMNDHND')" aria-label="View Python for Everybody Specialization certificate">
             <img src="assets/img/certs/cert-py-specialization.jpg" alt="Python for Everybody Specialization certificate" loading="lazy">
           </button>
@@ -179,19 +204,6 @@
           </div>
           <p class="cert-card__meta">University of Michigan</p>
           <p class="cert-card__meta">Completed September 2022</p>
-        </div>
-
-        <div class="cert-card anim-reveal" style="animation-delay:0.19s">
-          <button class="cert-card__thumb" onclick="openCert('assets/img/certs/cert-ibm-capstone.jpg','AI Capstone Project with Deep Learning','May 13, 2024','https://coursera.org/verify/KQSHN3FUYYN7')" aria-label="View IBM AI Engineering course certificates">
-            <img src="assets/img/certs/cert-ibm-capstone.jpg" alt="IBM AI Capstone Project with Deep Learning certificate" loading="lazy">
-          </button>
-          <h3 class="cert-card__name">IBM AI Engineering Professional Certificate</h3>
-          <div class="cert-card__links">
-            <button class="cert-card__link" onclick="openCert('assets/img/certs/cert-ibm-capstone.jpg','AI Capstone Project with Deep Learning','May 13, 2024','https://coursera.org/verify/KQSHN3FUYYN7')">View certificates</button>
-            <a class="cert-card__link" href="https://coursera.org/verify/KQSHN3FUYYN7" target="_blank" rel="noopener">Verify</a>
-          </div>
-          <p class="cert-card__meta">IBM</p>
-          <p class="cert-card__meta">5 courses, Nov 2023 to May 2024</p>
         </div>
 
       </div>
@@ -325,6 +337,8 @@
       { src: 'assets/img/certs/cert-sdc-state-estimation.jpg', title: 'State Estimation and Localization for Self-Driving Cars', date: 'Jul 18, 2026', url: 'https://coursera.org/verify/5CV6H7M8UDJC' },
       { src: 'assets/img/certs/cert-sdc-visual-perception.jpg', title: 'Visual Perception for Self-Driving Cars', date: 'Jul 24, 2026', url: 'https://coursera.org/verify/UYGH7GSJ0QEI' },
       { src: 'assets/img/certs/cert-sdc-motion-planning.jpg', title: 'Motion Planning for Self-Driving Cars', date: 'Aug 28, 2026', url: 'https://coursera.org/verify/6RNCUJTK9SRZ' },
+      { src: 'assets/img/certs/cert-shell-apc-2025.jpg', title: 'Shell Eco-marathon Autonomous Programming Competition 2025', date: 'Certificate of Participation · May 28, 2025', url: '' },
+      { src: 'assets/img/certs/cert-ibm-professional.jpg', title: 'IBM AI Engineering: Professional Certificate', date: 'May 13, 2024 · 6 Courses', url: 'https://coursera.org/verify/professional-cert/KJLP9TM7WURC' },
       { src: 'assets/img/certs/cert-ibm-capstone.jpg', title: 'AI Capstone Project with Deep Learning', date: 'May 13, 2024', url: 'https://coursera.org/verify/KQSHN3FUYYN7' },
       { src: 'assets/img/certs/cert-ibm-machine-learning.jpg', title: 'Machine Learning with Python (with honors)', date: 'Nov 14, 2023', url: 'https://coursera.org/verify/G4RTZ3CWTAG3' },
       { src: 'assets/img/certs/cert-ibm-deep-learning-keras.jpg', title: 'Introduction to Deep Learning & Neural Networks with Keras', date: 'Nov 12, 2023', url: 'https://coursera.org/verify/AZVQFWUKMVGB' },
@@ -355,8 +369,13 @@
       document.getElementById('cert-lightbox-img').src = c.src;
       document.getElementById('cert-lightbox-title').textContent = c.title;
       document.getElementById('cert-lightbox-date').textContent = c.date;
-      document.getElementById('cert-lightbox-verify').href = c.url;
-      document.getElementById('cert-lightbox-counter').textContent = (_certIdx + 1) + ' / ' + _certGroup.length;
+      var verify = document.getElementById('cert-lightbox-verify');
+      verify.href = c.url || '#';
+      verify.style.display = c.url ? '' : 'none';
+      /* A single certificate has nothing to page through */
+      var single = _certGroup.length < 2;
+      document.getElementById('cert-lightbox-counter').textContent = single ? '' : (_certIdx + 1) + ' / ' + _certGroup.length;
+      document.querySelectorAll('.cert-lightbox__nav').forEach(function(b){ b.style.display = single ? 'none' : ''; });
     }
 
     function shiftCert(dir) {
