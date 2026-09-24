@@ -1,3 +1,18 @@
+# Build output and dependencies
+dist/
+node_modules/
+.astro/
+
+# Logs / env
+npm-debug.log*
+.env
+.env.*
+
+# Editors / OS
+.DS_Store
+.vscode/
+.idea/
+
 # Local tooling
 .claude/
 __pycache__/
