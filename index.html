@@ -218,20 +218,38 @@
 
       <!-- Tabs are revealed by main.js; without JS both lists show in full -->
       <div class="work-tabs" role="tablist" aria-label="Filter work" hidden>
-        <button class="work-tab" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="true">Projects <span class="work-tab__count">2</span></button>
+        <button class="work-tab" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="true">Projects <span class="work-tab__count">3</span></button>
         <button class="work-tab" role="tab" id="tab-competitions" aria-controls="panel-competitions" aria-selected="false" tabindex="-1">Competitions <span class="work-tab__count">5</span></button>
       </div>
 
       <div class="projects-grid" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
 
-        <article class="project-card anim-reveal" style="animation-delay:0.05s">
+        <article class="project-card project-card--feature anim-reveal" style="animation-delay:0.05s">
+          <div class="project-card__media">
+            <video controls preload="none" playsinline poster="assets/img/projects/autopark-poster.jpg" aria-label="AutoPark demo video, 1 minute 44 seconds">
+              <source src="assets/video/autopark-demo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__head"><h3>AutoPark: Vision-Based Autonomous Parking</h3></div>
+            <p>A simulated car drives down a parking aisle, finds a free space using only its four fisheye cameras and wheel odometry, then reverses into it on its own. Every part of the stack is built from scratch in ROS 2 and Webots: a bird's-eye view from the cameras, a CNN slot detector, a Kalman filter per slot, a Hybrid A* planner with Reeds-Shepp curves and a Stanley controller.</p>
+            <div class="project-stats">
+              <div class="project-stat"><b>12 / 12</b><span>test scenarios parked with no contact</span></div>
+              <div class="project-stat"><b>1 to 2 cm</b><span>median distance from the slot centre</span></div>
+              <div class="project-stat"><b>99.7%</b><span>of slots detected, even with the car turned past 45°</span></div>
+            </div>
+            <div class="project-card__stack"><span class="chip">ROS 2</span><span class="chip">Webots</span><span class="chip">PyTorch</span><span class="chip">OpenCV</span><span class="chip">Kalman Filter</span><span class="chip">Hybrid A*</span></div>
+          </div>
+        </article>
+
+        <article class="project-card anim-reveal" style="animation-delay:0.10s">
           <div class="project-card__head"><h3>Graduate Career Agent</h3></div>
           <p>AI career coach built on FastAPI + Meta Llama 3: context-aware chat, a CV-tailoring engine that parses PDFs for gap analysis, ATS score estimation, and skill categorization, all containerized with Docker.</p>
           <div class="project-card__stack"><span class="chip">Llama 3</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Hugging Face</span></div>
           <div class="project-card__links"><a href="https://www.loom.com/share/fad7c1952eca40879a0ec6fd727c2015" target="_blank" rel="noopener">Watch demo ↗</a></div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.10s">
+        <article class="project-card anim-reveal" style="animation-delay:0.15s">
           <div class="project-card__head"><h3>AI-Based Smart Surveillance</h3><span class="project-card__badge">Final Year Project</span></div>
           <p>Event-driven surveillance with a PIR + Raspberry Pi camera wake-trigger, YOLO object detection via the OpenCV DNN module, low-latency edge inference, and real-time email threat alerts.</p>
           <div class="project-card__stack"><span class="chip">YOLO</span><span class="chip">OpenCV DNN</span><span class="chip">Raspberry Pi</span><span class="chip">Edge AI</span></div>
