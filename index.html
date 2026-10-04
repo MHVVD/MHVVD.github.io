@@ -242,13 +242,31 @@
 
       <!-- Tabs are revealed by main.js; without JS both lists show in full -->
       <div class="work-tabs" role="tablist" aria-label="Filter work" hidden>
-        <button class="work-tab" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="true">Projects <span class="work-tab__count">3</span></button>
+        <button class="work-tab" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="true">Projects <span class="work-tab__count">4</span></button>
         <button class="work-tab" role="tab" id="tab-competitions" aria-controls="panel-competitions" aria-selected="false" tabindex="-1">Competitions <span class="work-tab__count">5</span></button>
       </div>
 
       <div class="projects-grid" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
 
         <article class="project-card project-card--feature anim-reveal" style="animation-delay:0.05s">
+          <div class="project-card__media">
+            <video controls preload="none" playsinline poster="assets/img/projects/semantic-robot-poster.jpg" aria-label="Semantic Object-Finding Robot demo video, 71 seconds">
+              <source src="assets/video/semantic-robot-demo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__head"><h3>Semantic Object-Finding Robot</h3></div>
+            <p>A TurtleBot 4 that explores an unknown house on its own, learns where the objects are with a CPU-only YOLO detector, and drives to them by name: say "go to the fridge" and it goes. Detections are lifted into 3D with the depth camera and fused into a persistent semantic map, and every result is scored against the simulator's ground truth.</p>
+            <div class="project-stats">
+              <div class="project-stat"><b>89%</b><span>of the house mapped on its own, no teleop</span></div>
+              <div class="project-stat"><b>72%</b><span>of "go to" commands reached the right object</span></div>
+              <div class="project-stat"><b>0 / 60</b><span>navigation failures across three full runs</span></div>
+            </div>
+            <div class="project-card__stack"><span class="chip">ROS 2</span><span class="chip">Nav2</span><span class="chip">SLAM</span><span class="chip">YOLO11n</span><span class="chip">OpenVINO</span><span class="chip">Gazebo</span><span class="chip">Docker</span></div>
+          </div>
+        </article>
+
+        <article class="project-card project-card--feature anim-reveal" style="animation-delay:0.10s">
           <div class="project-card__media">
             <video controls preload="none" playsinline poster="assets/img/projects/autopark-poster.jpg" aria-label="AutoPark demo video, 1 minute 44 seconds">
               <source src="assets/video/autopark-demo.mp4" type="video/mp4">
@@ -266,14 +284,14 @@
           </div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.10s">
+        <article class="project-card anim-reveal" style="animation-delay:0.15s">
           <div class="project-card__head"><h3>Graduate Career Agent</h3></div>
           <p>AI career coach built on FastAPI + Meta Llama 3: context-aware chat, a CV-tailoring engine that parses PDFs for gap analysis, ATS score estimation, and skill categorization, all containerized with Docker.</p>
           <div class="project-card__stack"><span class="chip">Llama 3</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Hugging Face</span></div>
           <div class="project-card__links"><a href="https://www.loom.com/share/fad7c1952eca40879a0ec6fd727c2015" target="_blank" rel="noopener">Watch demo ↗</a></div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.15s">
+        <article class="project-card anim-reveal" style="animation-delay:0.20s">
           <div class="project-card__head"><h3>AI-Based Smart Surveillance</h3><span class="project-card__badge">Final Year Project</span></div>
           <p>Event-driven surveillance with a PIR + Raspberry Pi camera wake-trigger, YOLO object detection via the OpenCV DNN module, low-latency edge inference, and real-time email threat alerts.</p>
           <div class="project-card__stack"><span class="chip">YOLO</span><span class="chip">OpenCV DNN</span><span class="chip">Raspberry Pi</span><span class="chip">Edge AI</span></div>
