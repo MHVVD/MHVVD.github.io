@@ -1,6 +1,27 @@
 {
   "posts": [
     {
+      "slug": "weighted-least-squares",
+      "title": "Weighted Least Squares",
+      "series": "robotics-one-page",
+      "seriesNumber": 5,
+      "excerpt": "Plain least squares gives a cheap multimeter the same vote as a precise bench meter. Weighted Least Squares gives every measurement a weight based on how noisy it is: a noisy meter gets a quiet voice, a precise meter a loud one.",
+      "tags": [
+        "least-squares",
+        "weighted-least-squares",
+        "estimation",
+        "state-estimation",
+        "kalman"
+      ],
+      "created": "2026-10-10T23:39:41+01:00",
+      "updated": "2026-10-10T23:39:53+01:00",
+      "readingTime": "1 min",
+      "hasSheet": true,
+      "sheetImages": [
+        "assets/img/posts/least-squares/Weighted Least Squares — Robotics Concepts in One Page_page-0001.jpg"
+      ]
+    },
+    {
       "slug": "least-squares",
       "title": "Least Squares",
       "series": "robotics-one-page",
