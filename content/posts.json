@@ -1,18 +1,45 @@
 {
   "posts": [
     {
-      "slug": "linear-kalman-filter",
-      "title": "Linear Kalman Filter",
+      "slug": "least-squares",
+      "title": "Least Squares",
       "series": "robotics-one-page",
-      "seriesNumber": 1,
-      "excerpt": "The Kalman filter is basically a tool used to combine information from different sources to get a more accurate estimate of something. Starting the series with a self-driving car case study.",
-      "tags": ["kalman", "estimation", "state-space", "localization"],
-      "created": "2026-08-14T21:52:00+01:00",
-      "updated": "2026-08-14T21:52:00+01:00",
-      "readingTime": "6 min",
+      "seriesNumber": 4,
+      "excerpt": "Least squares is basically a way of taking many imperfect measurements of the same thing and finding the one answer that disagrees with all of them the least. The older, simpler idea underneath the Kalman filter.",
+      "tags": [
+        "least-squares",
+        "estimation",
+        "state-estimation",
+        "kalman"
+      ],
+      "created": "2026-10-10T23:25:22+01:00",
+      "updated": "2026-10-10T23:25:34+01:00",
+      "readingTime": "2 min",
       "hasSheet": true,
       "sheetImages": [
-        "assets/img/posts/kalman/Linear Kalman Filter — Robotics Concepts in One Page_page-0001.jpg"
+        "assets/img/posts/least-squares/Least Squares — Robotics Concepts in One Page_page-0001.jpg"
+      ]
+    },
+    {
+      "slug": "eskf-the-mathematics",
+      "title": "ESKF: The Mathematics",
+      "series": "robotics-one-page",
+      "seriesNumber": 3,
+      "excerpt": "To actually understand how the ESKF works — not just the idea behind it — we walk through the math step by step: propagate, linearize, update, correct, reset.",
+      "tags": [
+        "kalman",
+        "eskf",
+        "nonlinear",
+        "linearization",
+        "mathematics",
+        "state-estimation"
+      ],
+      "created": "2026-09-10T11:05:00+01:00",
+      "updated": "2026-09-10T11:05:00+01:00",
+      "readingTime": "5 min",
+      "hasSheet": true,
+      "sheetImages": [
+        "assets/img/posts/kalman/ESKF The Mathematics — Robotics Concepts in One Page_page-0001.jpg"
       ]
     },
     {
@@ -21,7 +48,13 @@
       "series": "robotics-one-page",
       "seriesNumber": 2,
       "excerpt": "The regular Kalman Filter assumes everything behaves linearly. Real robots don't. The ESKF linearizes the small error around the current estimate, bringing nonlinear systems back into Kalman territory.",
-      "tags": ["kalman", "eskf", "nonlinear", "linearization", "localization"],
+      "tags": [
+        "kalman",
+        "eskf",
+        "nonlinear",
+        "linearization",
+        "localization"
+      ],
       "created": "2026-09-09T14:38:00+01:00",
       "updated": "2026-09-09T14:38:00+01:00",
       "readingTime": "5 min",
@@ -31,18 +64,23 @@
       ]
     },
     {
-      "slug": "eskf-the-mathematics",
-      "title": "ESKF: The Mathematics",
+      "slug": "linear-kalman-filter",
+      "title": "Linear Kalman Filter",
       "series": "robotics-one-page",
-      "seriesNumber": 3,
-      "excerpt": "To actually understand how the ESKF works — not just the idea behind it — we walk through the math step by step: propagate, linearize, update, correct, reset.",
-      "tags": ["kalman", "eskf", "nonlinear", "linearization", "mathematics", "state-estimation"],
-      "created": "2026-09-10T11:05:00+01:00",
-      "updated": "2026-09-10T11:05:00+01:00",
-      "readingTime": "5 min",
+      "seriesNumber": 1,
+      "excerpt": "The Kalman filter is basically a tool used to combine information from different sources to get a more accurate estimate of something. Starting the series with a self-driving car case study.",
+      "tags": [
+        "kalman",
+        "estimation",
+        "state-space",
+        "localization"
+      ],
+      "created": "2026-08-14T21:52:00+01:00",
+      "updated": "2026-08-14T21:52:00+01:00",
+      "readingTime": "6 min",
       "hasSheet": true,
       "sheetImages": [
-        "assets/img/posts/kalman/ESKF The Mathematics — Robotics Concepts in One Page_page-0001.jpg"
+        "assets/img/posts/kalman/Linear Kalman Filter — Robotics Concepts in One Page_page-0001.jpg"
       ]
     }
   ]
