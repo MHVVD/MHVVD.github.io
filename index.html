@@ -21,7 +21,7 @@
   </script>
 
   <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/site.css?v=2">
+  <link rel="stylesheet" href="assets/css/site.css?v=3">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -250,13 +250,33 @@
 
       <!-- Tabs are revealed by main.js; without JS both lists show in full -->
       <div class="work-tabs" role="tablist" aria-label="Filter work" hidden>
-        <button class="work-tab" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="true">Projects <span class="work-tab__count">4</span></button>
+        <button class="work-tab" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="true">Projects <span class="work-tab__count">5</span></button>
         <button class="work-tab" role="tab" id="tab-competitions" aria-controls="panel-competitions" aria-selected="false" tabindex="-1">Competitions <span class="work-tab__count">5</span></button>
       </div>
 
       <div class="projects-grid" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
 
         <article class="project-card project-card--feature anim-reveal" style="animation-delay:0.05s">
+          <div class="project-card__media">
+            <video controls preload="none" playsinline poster="assets/img/projects/asl-fingerspelling-poster.jpg" aria-label="ASL fingerspelling real-world test, before and after the fix, 39 seconds">
+              <source src="assets/video/asl-fingerspelling-demo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__head"><h3>ASL Fingerspelling: Tutor + Video Translator</h3><span class="project-card__badge">In progress</span></div>
+            <p>Recognises American Sign Language fingerspelling from a webcam or any video, on a laptop CPU with no GPU. One 73 KB model powers two modes: a live tutor that watches you sign and says exactly what to fix, and a translator that turns fingerspelling video into subtitles. Tested openly on real footage of a signer it has never seen, with every result published, good or bad.</p>
+            <div class="project-stats">
+              <div class="project-stat"><b>95%</b><span>of letters right on the public dataset's signer</span></div>
+              <div class="project-stat"><b>73%</b><span>on an unseen session of my own hand</span></div>
+              <div class="project-stat"><b>1 → 12 / 26</b><span>letters on a stranger's real video, after one root-cause fix</span></div>
+            </div>
+            <div class="project-card__stack"><span class="chip">MediaPipe</span><span class="chip">OpenCV</span><span class="chip">NumPy</span><span class="chip">scikit-learn</span><span class="chip">Python</span></div>
+            <div class="project-card__links"><a href="https://github.com/MHVVD/asl-fingerspelling-cv" target="_blank" rel="noopener">View on GitHub ↗</a><a href="post.html?slug=asl-build-log-first-real-world-test">Read the build log →</a></div>
+            <p class="project-card__credit">Test video: Travis Dougherty, ASL demo, by Fuzheado, <a href="https://commons.wikimedia.org/wiki/File:American_Sign_Language_demo_-_Travis_Dougherty.ogv" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons. Demo video CC BY-SA 3.0.</p>
+          </div>
+        </article>
+
+        <article class="project-card project-card--feature anim-reveal" style="animation-delay:0.10s">
           <div class="project-card__media">
             <video controls preload="none" playsinline poster="assets/img/projects/semantic-robot-poster.jpg" aria-label="Semantic Object-Finding Robot demo video, 71 seconds">
               <source src="assets/video/semantic-robot-demo.mp4" type="video/mp4">

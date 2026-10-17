@@ -54,6 +54,7 @@ MANIFEST = os.path.join(ROOT, "content", "posts.json")
 # Human-readable series titles for the scaffold's intro line.
 SERIES_TITLES = {
     "robotics-one-page": "Robotics Concepts in One Page",
+    "asl-build-log": "ASL Fingerspelling Build Log",
 }
 
 

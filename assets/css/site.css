@@ -388,3 +388,6 @@
   color: var(--text-faint); margin-left: auto;
 }
 
+
+.project-card__body p.project-card__credit { font-size: 0.72rem; line-height: 1.45; color: var(--text-soft); }
+.project-card__credit a { color: inherit; text-decoration: underline; }

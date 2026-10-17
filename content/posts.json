@@ -22,6 +22,72 @@
       ]
     },
     {
+      "slug": "asl-build-log-first-real-world-test",
+      "title": "First Real-World Test: 1 to 12 Out of 26",
+      "series": "asl-build-log",
+      "seriesNumber": 4,
+      "excerpt": "Can my model read someone it has never seen? At first, it read the wrong hand.",
+      "tags": [
+        "testing",
+        "debugging",
+        "computer-vision",
+        "asl"
+      ],
+      "created": "2026-10-16T18:00:00+01:00",
+      "updated": "2026-10-16T18:00:00+01:00",
+      "readingTime": "3 min",
+      "hasSheet": false
+    },
+    {
+      "slug": "asl-build-log-tutor-and-translator",
+      "title": "A Tutor and a Translator",
+      "series": "asl-build-log",
+      "seriesNumber": 3,
+      "excerpt": "Turning flickering frame-by-frame guesses into feedback you can act on and subtitles you can read.",
+      "tags": [
+        "computer-vision",
+        "accessibility",
+        "asl"
+      ],
+      "created": "2026-10-13T18:00:00+01:00",
+      "updated": "2026-10-13T18:00:00+01:00",
+      "readingTime": "2 min",
+      "hasSheet": false
+    },
+    {
+      "slug": "asl-build-log-mirroring-bugs",
+      "title": "Two Mirroring Bugs, and Why My First Fix Was Wrong",
+      "series": "asl-build-log",
+      "seriesNumber": 2,
+      "excerpt": "My right hand kept turning into a left hand. Finding out why took two tries.",
+      "tags": [
+        "debugging",
+        "computer-vision",
+        "asl"
+      ],
+      "created": "2026-10-11T18:00:00+01:00",
+      "updated": "2026-10-11T18:00:00+01:00",
+      "readingTime": "3 min",
+      "hasSheet": false
+    },
+    {
+      "slug": "asl-build-log-webcam-to-letters",
+      "title": "From Webcam to Letters",
+      "series": "asl-build-log",
+      "seriesNumber": 1,
+      "excerpt": "How a laptop webcam, 21 hand points and a 73 KB model learned to read the ASL alphabet.",
+      "tags": [
+        "computer-vision",
+        "mediapipe",
+        "machine-learning",
+        "asl"
+      ],
+      "created": "2026-10-03T18:00:00+01:00",
+      "updated": "2026-10-03T18:00:00+01:00",
+      "readingTime": "3 min",
+      "hasSheet": false
+    },
+    {
       "slug": "weighted-least-squares",
       "title": "Weighted Least Squares",
       "series": "robotics-one-page",
