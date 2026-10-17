@@ -248,35 +248,16 @@
         <p>End-to-end systems across vision, language, and autonomy, several battle-tested in hackathons and global competitions.</p>
       </div>
 
-      <!-- Tabs are revealed by main.js; without JS both lists show in full -->
+      <!-- Tabs are revealed by main.js; without JS every list shows in full -->
       <div class="work-tabs" role="tablist" aria-label="Filter work" hidden>
-        <button class="work-tab" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="true">Projects <span class="work-tab__count">5</span></button>
-        <button class="work-tab" role="tab" id="tab-competitions" aria-controls="panel-competitions" aria-selected="false" tabindex="-1">Competitions <span class="work-tab__count">5</span></button>
+        <button class="work-tab" role="tab" id="tab-robotics" aria-controls="panel-robotics" aria-selected="true">Robotics <span class="work-tab__count">2</span></button>
+        <button class="work-tab" role="tab" id="tab-vision" aria-controls="panel-vision" aria-selected="false" tabindex="-1">Computer Vision <span class="work-tab__count">2</span></button>
+        <button class="work-tab" role="tab" id="tab-competitions" aria-controls="panel-competitions" aria-selected="false" tabindex="-1">Competitions <span class="work-tab__count">6</span></button>
       </div>
 
-      <div class="projects-grid" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects">
+      <div class="projects-grid" id="panel-robotics" role="tabpanel" aria-labelledby="tab-robotics">
 
         <article class="project-card project-card--feature anim-reveal" style="animation-delay:0.05s">
-          <div class="project-card__media">
-            <video controls preload="none" playsinline poster="assets/img/projects/asl-fingerspelling-poster.jpg" aria-label="ASL fingerspelling real-world test, before and after the fix, 39 seconds">
-              <source src="assets/video/asl-fingerspelling-demo.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="project-card__body">
-            <div class="project-card__head"><h3>ASL Fingerspelling: Tutor + Video Translator</h3><span class="project-card__badge">In progress</span></div>
-            <p>Recognises American Sign Language fingerspelling from a webcam or any video, on a laptop CPU with no GPU. One 73 KB model powers two modes: a live tutor that watches you sign and says exactly what to fix, and a translator that turns fingerspelling video into subtitles. Tested openly on real footage of a signer it has never seen, with every result published, good or bad.</p>
-            <div class="project-stats">
-              <div class="project-stat"><b>95%</b><span>of letters right on the public dataset's signer</span></div>
-              <div class="project-stat"><b>73%</b><span>on an unseen session of my own hand</span></div>
-              <div class="project-stat"><b>1 → 12 / 26</b><span>letters on a stranger's real video, after one root-cause fix</span></div>
-            </div>
-            <div class="project-card__stack"><span class="chip">MediaPipe</span><span class="chip">OpenCV</span><span class="chip">NumPy</span><span class="chip">scikit-learn</span><span class="chip">Python</span></div>
-            <div class="project-card__links"><a href="https://github.com/MHVVD/asl-fingerspelling-cv" target="_blank" rel="noopener">View on GitHub ↗</a><a href="post.html?slug=asl-build-log-first-real-world-test">Read the build log →</a></div>
-            <p class="project-card__credit">Test video: Travis Dougherty, ASL demo, by Fuzheado, <a href="https://commons.wikimedia.org/wiki/File:American_Sign_Language_demo_-_Travis_Dougherty.ogv" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons. Demo video CC BY-SA 3.0.</p>
-          </div>
-        </article>
-
-        <article class="project-card project-card--feature anim-reveal" style="animation-delay:0.10s">
           <div class="project-card__media">
             <video controls preload="none" playsinline poster="assets/img/projects/semantic-robot-poster.jpg" aria-label="Semantic Object-Finding Robot demo video, 71 seconds">
               <source src="assets/video/semantic-robot-demo.mp4" type="video/mp4">
@@ -314,14 +295,31 @@
           </div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.15s">
-          <div class="project-card__head"><h3>Graduate Career Agent</h3></div>
-          <p>AI career coach built on FastAPI + Meta Llama 3: context-aware chat, a CV-tailoring engine that parses PDFs for gap analysis, ATS score estimation, and skill categorization, all containerized with Docker.</p>
-          <div class="project-card__stack"><span class="chip">Llama 3</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Hugging Face</span></div>
-          <div class="project-card__links"><a href="https://www.loom.com/share/fad7c1952eca40879a0ec6fd727c2015" target="_blank" rel="noopener">Watch demo ↗</a></div>
+      </div>
+
+      <div class="projects-grid" id="panel-vision" role="tabpanel" aria-labelledby="tab-vision">
+
+        <article class="project-card project-card--feature anim-reveal" style="animation-delay:0.05s">
+          <div class="project-card__media">
+            <video controls preload="none" playsinline poster="assets/img/projects/asl-fingerspelling-poster.jpg" aria-label="ASL fingerspelling real-world test, before and after the fix, 39 seconds">
+              <source src="assets/video/asl-fingerspelling-demo.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__head"><h3>ASL Fingerspelling: Tutor + Video Translator</h3><span class="project-card__badge">In progress</span></div>
+            <p>Recognises American Sign Language fingerspelling from a webcam or any video, on a laptop CPU with no GPU. One 73 KB model powers two modes: a live tutor that watches you sign and says exactly what to fix, and a translator that turns fingerspelling video into subtitles. Tested openly on real footage of a signer it has never seen, with every result published, good or bad.</p>
+            <div class="project-stats">
+              <div class="project-stat"><b>95%</b><span>of letters right on the public dataset's signer</span></div>
+              <div class="project-stat"><b>73%</b><span>on an unseen session of my own hand</span></div>
+              <div class="project-stat"><b>1 → 12 / 26</b><span>letters on a stranger's real video, after one root-cause fix</span></div>
+            </div>
+            <div class="project-card__stack"><span class="chip">MediaPipe</span><span class="chip">OpenCV</span><span class="chip">NumPy</span><span class="chip">scikit-learn</span><span class="chip">Python</span></div>
+            <div class="project-card__links"><a href="https://github.com/MHVVD/asl-fingerspelling-cv" target="_blank" rel="noopener">View on GitHub ↗</a><a href="post.html?slug=asl-build-log-first-real-world-test">Read the build log →</a></div>
+            <p class="project-card__credit">Test video: Travis Dougherty, ASL demo, by Fuzheado, <a href="https://commons.wikimedia.org/wiki/File:American_Sign_Language_demo_-_Travis_Dougherty.ogv" target="_blank" rel="noopener">CC BY-SA 3.0</a>, via Wikimedia Commons. Demo video CC BY-SA 3.0.</p>
+          </div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.20s">
+        <article class="project-card anim-reveal" style="animation-delay:0.10s">
           <div class="project-card__head"><h3>AI-Based Smart Surveillance</h3><span class="project-card__badge">Final Year Project</span></div>
           <p>Event-driven surveillance with a PIR + Raspberry Pi camera wake-trigger, YOLO object detection via the OpenCV DNN module, low-latency edge inference, and real-time email threat alerts.</p>
           <div class="project-card__stack"><span class="chip">YOLO</span><span class="chip">OpenCV DNN</span><span class="chip">Raspberry Pi</span><span class="chip">Edge AI</span></div>
@@ -345,19 +343,26 @@
         </article>
 
         <article class="project-card anim-reveal" style="animation-delay:0.15s">
+          <div class="project-card__head"><h3>Graduate Career Agent</h3><span class="project-card__badge">Meta AI Academy</span></div>
+          <p>AI career coach built on FastAPI + Meta Llama 3: context-aware chat, a CV-tailoring engine that parses PDFs for gap analysis, ATS score estimation, and skill categorization, all containerized with Docker.</p>
+          <div class="project-card__stack"><span class="chip">Llama 3</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Hugging Face</span></div>
+          <div class="project-card__links"><a href="https://www.loom.com/share/fad7c1952eca40879a0ec6fd727c2015" target="_blank" rel="noopener">Watch demo ↗</a></div>
+        </article>
+
+        <article class="project-card anim-reveal" style="animation-delay:0.20s">
           <div class="project-card__head"><h3>Shell Autonomous Programming</h3></div>
           <p>Spearheaded the control algorithm for autonomous navigation and obstacle avoidance. First team from Sub-Saharan Africa to compete, and secured a global leaderboard placement.</p>
           <div class="project-card__stack"><span class="chip">ROS</span><span class="chip">Robotics</span><span class="chip">Control</span></div>
           <div class="project-card__links"><a href="https://www.linkedin.com/posts/ugcPost-7334395221658460160-DEtu" target="_blank" rel="noopener">View LinkedIn post ↗</a></div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.20s">
+        <article class="project-card anim-reveal" style="animation-delay:0.25s">
           <div class="project-card__head"><h3>Zindi Traffic Congestion Analytics</h3></div>
           <p>End-to-end video analytics pipeline classifying urban traffic congestion: YOLOv8 for real-time tracking, LightGBM for classification, with temporal lag/delta features for traffic-momentum accuracy.</p>
           <div class="project-card__stack"><span class="chip">YOLOv8</span><span class="chip">OpenCV</span><span class="chip">LightGBM</span><span class="chip">Time-Series</span></div>
         </article>
 
-        <article class="project-card anim-reveal" style="animation-delay:0.25s">
+        <article class="project-card anim-reveal" style="animation-delay:0.30s">
           <div class="project-card__head"><h3>Zindi Crop Disease Detection</h3></div>
           <p>YOLO-based computer-vision system for crop-disease identification: multi-stage segmentation and classification with a robust preprocessing pipeline, optimized for offline edge detection on the farm.</p>
           <div class="project-card__stack"><span class="chip">YOLO</span><span class="chip">OpenCV</span><span class="chip">Edge Deployment</span></div>
