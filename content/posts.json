@@ -1,6 +1,27 @@
 {
   "posts": [
     {
+      "slug": "why-gaussians-are-everywhere",
+      "title": "Why Gaussians Are Everywhere",
+      "series": "robotics-one-page",
+      "seriesNumber": 6,
+      "excerpt": "The Kalman filter, least squares and weighted least squares all quietly assume the noise is Gaussian. Many small errors add up to a bell curve, and a bell curve needs only two numbers to describe: a mean and a variance.",
+      "tags": [
+        "gaussian",
+        "probability",
+        "estimation",
+        "least-squares",
+        "kalman"
+      ],
+      "created": "2026-10-17T12:00:00+01:00",
+      "updated": "2026-10-17T12:00:00+01:00",
+      "readingTime": "2 min",
+      "hasSheet": true,
+      "sheetImages": [
+        "assets/img/posts/gaussian/Why Gaussians Are Everywhere — Robotics Concepts in One Page_page-0001.jpg"
+      ]
+    },
+    {
       "slug": "weighted-least-squares",
       "title": "Weighted Least Squares",
       "series": "robotics-one-page",
