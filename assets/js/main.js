@@ -61,7 +61,7 @@
     });
   }
 
-  /* ---- Work tabs: Projects (default) / Competitions ---- */
+  /* ---- Work tabs: Robotics (default) / Computer Vision / Competitions ---- */
   var tabList = document.querySelector(".work-tabs");
   if (tabList) {
     var tabs = Array.prototype.slice.call(tabList.querySelectorAll('[role="tab"]'));

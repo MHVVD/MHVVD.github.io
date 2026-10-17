@@ -184,8 +184,14 @@
   background: var(--surface); color: var(--text-soft); border: 1px solid var(--border);
 }
 .work-tab[aria-selected="true"] .work-tab__count { color: var(--accent); border-color: var(--accent); }
-/* Without JS both panels show, so space them apart */
-#panel-projects + #panel-competitions { margin-top: 24px; }
+/* Phones: keep labels on one line and drop the counts so all tabs fit */
+@media (max-width: 480px) {
+  .work-tabs { gap: 18px; overflow-x: auto; scrollbar-width: none; }
+  .work-tab { white-space: nowrap; font-size: 0.95rem; }
+  .work-tab__count { display: none; }
+}
+/* Without JS every panel shows, so space them apart */
+.projects-grid + .projects-grid { margin-top: 24px; }
 .projects-grid[hidden] { display: none; }
 /* After a tab switch, show cards at once instead of replaying the load-in fade */
 .projects-grid.is-switched .anim-reveal { animation: none; opacity: 1; }
