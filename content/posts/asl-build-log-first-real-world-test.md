@@ -69,5 +69,3 @@ I deliberately **stopped tuning after the fix**. Adjusting settings until this o
 - **A much larger real-world test**, such as a slice of the ChicagoFSWild dataset (160 signers, labelled), with every result published.
 
 Fingerspelling is only a small part of ASL, and nothing replaces learning from Deaf signers. But every bug like this one is a step closer to a tool people could actually use. If you sign and would record a few letters, that would help more than anything. The code is on [GitHub](https://github.com/MHVVD/asl-fingerspelling-cv).
-
-*Dated to when this stage of the work happened; written up on 17 October 2026 from the project journal.*

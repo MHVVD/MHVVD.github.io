@@ -50,5 +50,3 @@ With the bugs gone, drawing my average hand per session showed what was left: so
 - Measure, then guess. Every step here started with a number that looked impossible.
 
 Next: [a tutor and a translator →](post.html?slug=asl-build-log-tutor-and-translator)
-
-*Dated to when this stage of the work happened; written up on 17 October 2026 from the project journal.*

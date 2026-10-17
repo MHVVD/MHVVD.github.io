@@ -46,5 +46,3 @@ By this point, the model reached **73% on a full session of my own hand that it 
 The question left was the one that matters: what happens with a real video of someone else?
 
 Next: [first real-world test →](post.html?slug=asl-build-log-first-real-world-test)
-
-*Dated to when this stage of the work happened; written up on 17 October 2026 from the project journal.*

@@ -55,5 +55,3 @@ Importing PyTorch alone takes **21 seconds** on my laptop, so it is not used whe
 95% looked great until I tried it on myself. A model trained on one person learns *that person*. That gap shaped everything that came next: more of my own recordings, a careful look at which letters fail, and, eventually, testing on a complete stranger.
 
 Next: [two mirroring bugs, and why my first fix was wrong →](post.html?slug=asl-build-log-mirroring-bugs)
-
-*Dated to when this stage of the work happened; written up on 17 October 2026 from the project journal.*
