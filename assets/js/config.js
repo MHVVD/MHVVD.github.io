@@ -21,6 +21,11 @@ window.SITE = {
       title: "Robotics Concepts in One Page",
       short: "Robotics Concepts",
       blurb: "One robotics idea per page — the intuition in prose, the mathematics on a printable sheet you can pin to a wall."
+    },
+    "asl-build-log": {
+      title: "ASL Fingerspelling Build Log",
+      short: "ASL Build Log",
+      blurb: "Building a sign language tutor and video translator in the open: what worked, what broke, and the numbers, good or bad."
     }
   }
 };

@@ -327,3 +327,6 @@
   /* Posts without sheets: print the article cleanly */
   body:not(.has-sheets) .post-prose { max-width: none; font-size: 12pt; }
 }
+
+.post-prose video { display: block; width: 100%; border-radius: 10px; border: 1px solid var(--border); background: #151515; margin-inline: auto; }
+.post-prose figcaption, .post-prose .caption { font-size: 0.8rem; color: var(--text-soft); text-align: center; margin-top: 0.4rem; }
