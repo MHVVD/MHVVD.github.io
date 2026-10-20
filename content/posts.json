@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "slug": "asl-build-log-chicagofswild",
+      "title": "Training on 87 Signers: From 25% to 67%",
+      "series": "asl-build-log",
+      "seriesNumber": 5,
+      "excerpt": "My system scored 25% on real-world signers it had never seen. A small sequence model trained on 87 other signers scored 67%, on a laptop CPU.",
+      "tags": [
+        "machine-learning",
+        "sequence-models",
+        "ctc",
+        "datasets",
+        "asl"
+      ],
+      "created": "2026-10-20T14:52:06+01:00",
+      "updated": "2026-10-20T14:52:28+01:00",
+      "readingTime": "4 min",
+      "hasSheet": false
+    },
+    {
       "slug": "why-gaussians-are-everywhere",
       "title": "Why Gaussians Are Everywhere",
       "series": "robotics-one-page",
@@ -71,23 +89,6 @@
       "hasSheet": false
     },
     {
-      "slug": "asl-build-log-webcam-to-letters",
-      "title": "From Webcam to Letters",
-      "series": "asl-build-log",
-      "seriesNumber": 1,
-      "excerpt": "How a laptop webcam, 21 hand points and a 73 KB model learned to read the ASL alphabet.",
-      "tags": [
-        "computer-vision",
-        "mediapipe",
-        "machine-learning",
-        "asl"
-      ],
-      "created": "2026-10-03T18:00:00+01:00",
-      "updated": "2026-10-03T18:00:00+01:00",
-      "readingTime": "3 min",
-      "hasSheet": false
-    },
-    {
       "slug": "weighted-least-squares",
       "title": "Weighted Least Squares",
       "series": "robotics-one-page",
@@ -127,6 +128,23 @@
       "sheetImages": [
         "assets/img/posts/least-squares/Least Squares — Robotics Concepts in One Page_page-0001.jpg"
       ]
+    },
+    {
+      "slug": "asl-build-log-webcam-to-letters",
+      "title": "From Webcam to Letters",
+      "series": "asl-build-log",
+      "seriesNumber": 1,
+      "excerpt": "How a laptop webcam, 21 hand points and a 73 KB model learned to read the ASL alphabet.",
+      "tags": [
+        "computer-vision",
+        "mediapipe",
+        "machine-learning",
+        "asl"
+      ],
+      "created": "2026-10-03T18:00:00+01:00",
+      "updated": "2026-10-03T18:00:00+01:00",
+      "readingTime": "3 min",
+      "hasSheet": false
     },
     {
       "slug": "eskf-the-mathematics",
