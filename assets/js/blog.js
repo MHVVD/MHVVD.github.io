@@ -76,6 +76,16 @@
       b.textContent = seriesLabel(key);
       filterEl.appendChild(b);
     });
+    // Post count on every button, so the published total is always visible
+    filterEl.querySelectorAll(".filter-btn").forEach(function (btn) {
+      var key = btn.getAttribute("data-filter");
+      var n = key === "all" ? posts.length
+        : posts.filter(function (p) { return p.series === key; }).length;
+      var c = document.createElement("span");
+      c.className = "filter-btn__count";
+      c.textContent = n;
+      btn.appendChild(c);
+    });
     filterEl.addEventListener("click", function (e) {
       var btn = e.target.closest(".filter-btn");
       if (!btn) return;
