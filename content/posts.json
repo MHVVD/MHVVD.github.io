@@ -1,6 +1,23 @@
 {
   "posts": [
     {
+      "slug": "asl-build-log-fresh-test",
+      "title": "A Fresh Test, Scored Once",
+      "series": "asl-build-log",
+      "seriesNumber": 6,
+      "excerpt": "Two new signers, answer keys written before any model saw them, one scoring run. CAMPYLOBACTER, read perfectly at six letters a second.",
+      "tags": [
+        "testing",
+        "evaluation",
+        "machine-learning",
+        "asl"
+      ],
+      "created": "2026-10-20T19:02:10+01:00",
+      "updated": "2026-10-20T19:02:10+01:00",
+      "readingTime": "3 min",
+      "hasSheet": false
+    },
+    {
       "slug": "asl-build-log-chicagofswild",
       "title": "Training on 87 Signers: From 25% to 67%",
       "series": "asl-build-log",
