@@ -1,6 +1,23 @@
 {
   "posts": [
     {
+      "slug": "asl-build-log-double-letters-translator",
+      "title": "Double Letters, and the Translator Gets the New Model",
+      "series": "asl-build-log",
+      "seriesNumber": 7,
+      "excerpt": "One fix worked, one failed, and a bug that made spaces free. The video translator now runs the 70% model.",
+      "tags": [
+        "decoding",
+        "language-models",
+        "debugging",
+        "asl"
+      ],
+      "created": "2026-10-20T22:20:10+01:00",
+      "updated": "2026-10-20T22:20:10+01:00",
+      "readingTime": "3 min",
+      "hasSheet": false
+    },
+    {
       "slug": "asl-build-log-fresh-test",
       "title": "A Fresh Test, Scored Once",
       "series": "asl-build-log",
