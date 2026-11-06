@@ -1,6 +1,23 @@
 {
   "posts": [
     {
+      "slug": "asl-build-log-speak",
+      "title": "Making the Translator Speak",
+      "series": "asl-build-log",
+      "seriesNumber": 8,
+      "excerpt": "The translator now says the words it reads, using ElevenLabs. The hard part wasn't the voice; it was deciding what deserved to be said.",
+      "tags": [
+        "text-to-speech",
+        "elevenlabs",
+        "developer-experience",
+        "asl"
+      ],
+      "created": "2026-11-06T10:12:50+01:00",
+      "updated": "2026-11-06T10:13:12+01:00",
+      "readingTime": "5 min",
+      "hasSheet": false
+    },
+    {
       "slug": "asl-build-log-double-letters-translator",
       "title": "Double Letters, and the Translator Gets the New Model",
       "series": "asl-build-log",
