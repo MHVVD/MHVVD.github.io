@@ -1,6 +1,23 @@
 {
   "posts": [
     {
+      "slug": "asl-build-log-fingerspelling-detection",
+      "title": "Teaching the Translator When to Read Letters",
+      "series": "asl-build-log",
+      "seriesNumber": 9,
+      "excerpt": "Most signing isn't fingerspelling, but my translator read all of it as letters. A small detector now marks the moments that are spelling: 0.82 AP on signers it has never seen.",
+      "tags": [
+        "computer-vision",
+        "sequence-models",
+        "datasets",
+        "asl"
+      ],
+      "created": "2026-11-07T12:48:53+01:00",
+      "updated": "2026-11-07T12:48:53+01:00",
+      "readingTime": "4 min",
+      "hasSheet": false
+    },
+    {
       "slug": "asl-build-log-speak",
       "title": "Making the Translator Speak",
       "series": "asl-build-log",
