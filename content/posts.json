@@ -1,6 +1,23 @@
 {
   "posts": [
     {
+      "slug": "asl-build-log-small-signers",
+      "title": "Finding the Small Signer",
+      "series": "asl-build-log",
+      "seriesNumber": 11,
+      "excerpt": "When the interpreter is a small box in the corner, the hand tracker barely sees them. Find the person first, then look closer.",
+      "tags": [
+        "computer-vision",
+        "mediapipe",
+        "testing",
+        "asl"
+      ],
+      "created": "2026-11-13T22:10:12+01:00",
+      "updated": "2026-11-13T22:10:12+01:00",
+      "readingTime": "3 min",
+      "hasSheet": false
+    },
+    {
       "slug": "asl-build-log-real-world-benchmark",
       "title": "Seven Videos, Answers First",
       "series": "asl-build-log",
