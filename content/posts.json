@@ -1,6 +1,23 @@
 {
   "posts": [
     {
+      "slug": "asl-build-log-real-world-benchmark",
+      "title": "Seven Videos, Answers First",
+      "series": "asl-build-log",
+      "seriesNumber": 10,
+      "excerpt": "Every result so far came from one video. Now there are seven, with seven signers, and the answer key was published before any model saw them.",
+      "tags": [
+        "testing",
+        "evaluation",
+        "computer-vision",
+        "asl"
+      ],
+      "created": "2026-11-13T21:37:46+01:00",
+      "updated": "2026-11-13T21:37:50+01:00",
+      "readingTime": "4 min",
+      "hasSheet": false
+    },
+    {
       "slug": "asl-build-log-fingerspelling-detection",
       "title": "Teaching the Translator When to Read Letters",
       "series": "asl-build-log",
